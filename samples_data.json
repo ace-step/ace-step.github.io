@@ -1,0 +1,398 @@
+{
+    "DiverseStyles": [
+        {
+            "id": "acid-house",
+            "fileName": "acid_house",
+            "directory": "DiverseStyles"
+        },
+        {
+            "id": "afro-cuban",
+            "fileName": "afro_cuban",
+            "directory": "DiverseStyles"
+        },
+        {
+            "id": "alternative-rock",
+            "fileName": "alternative_rock",
+            "directory": "DiverseStyles"
+        },
+        {
+            "id": "black-metal",
+            "fileName": "black_metal",
+            "directory": "DiverseStyles"
+        },
+        {
+            "id": "country-rock-woke-up-to-the-sunrise",
+            "fileName": "country_rock_woke_up_to_the_sunrise",
+            "directory": "DiverseStyles"
+        },
+        {
+            "id": "cyberpunk",
+            "fileName": "cyberpunk",
+            "directory": "DiverseStyles"
+        },
+        {
+            "id": "dark-atmospheric",
+            "fileName": "dark_atmospheric",
+            "directory": "DiverseStyles"
+        },
+        {
+            "id": "dark-electro",
+            "fileName": "dark_electro",
+            "directory": "DiverseStyles"
+        },
+        {
+            "id": "disco",
+            "fileName": "disco",
+            "directory": "DiverseStyles"
+        },
+        {
+            "id": "drum-bass",
+            "fileName": "drum_bass",
+            "directory": "DiverseStyles"
+        },
+        {
+            "id": "dubstep",
+            "fileName": "dubstep",
+            "directory": "DiverseStyles"
+        },
+        {
+            "id": "electro-house",
+            "fileName": "electro_house",
+            "directory": "DiverseStyles"
+        },
+        {
+            "id": "electronic-rap-waves-on",
+            "fileName": "electronic_rap_waves_on",
+            "directory": "DiverseStyles"
+        },
+        {
+            "id": "female-pop",
+            "fileName": "female_pop",
+            "directory": "DiverseStyles"
+        },
+        {
+            "id": "folk-rnb-female",
+            "fileName": "folk_rnb_female",
+            "directory": "DiverseStyles"
+        },
+        {
+            "id": "funk-pop-neon-lights",
+            "fileName": "funk_pop_neon_lights",
+            "directory": "DiverseStyles"
+        },
+        {
+            "id": "hip-house",
+            "fileName": "hip-house",
+            "directory": "DiverseStyles"
+        },
+        {
+            "id": "hiphop-rap-shirt-song",
+            "fileName": "hiphop_rap_shirt_song",
+            "directory": "DiverseStyles"
+        },
+        {
+            "id": "mandopop",
+            "fileName": "mandopop",
+            "directory": "DiverseStyles"
+        },
+        {
+            "id": "minimal-techno",
+            "fileName": "minimal_techno",
+            "directory": "DiverseStyles"
+        },
+        {
+            "id": "orchestral-rock",
+            "fileName": "orchestral_rock",
+            "directory": "DiverseStyles"
+        },
+        {
+            "id": "psychedelic",
+            "fileName": "psychedelic",
+            "directory": "DiverseStyles"
+        },
+        {
+            "id": "surf-music",
+            "fileName": "surf_music",
+            "directory": "DiverseStyles"
+        },
+        {
+            "id": "trance",
+            "fileName": "trance",
+            "directory": "DiverseStyles"
+        },
+        {
+            "id": "world-sad",
+            "fileName": "world_sad",
+            "directory": "DiverseStyles"
+        }
+    ],
+    "InstrumentalStyles": [
+        {
+            "id": "dance-party",
+            "fileName": "dance_party",
+            "directory": "InstrumentalStyles"
+        },
+        {
+            "id": "saxphone-jazz",
+            "fileName": "saxphone_jazz",
+            "directory": "InstrumentalStyles"
+        },
+        {
+            "id": "sonata-piano-violin",
+            "fileName": "sonata_piano_violin",
+            "directory": "InstrumentalStyles"
+        },
+        {
+            "id": "tango-guitar",
+            "fileName": "tango_guitar",
+            "directory": "InstrumentalStyles"
+        },
+        {
+            "id": "violin-solo",
+            "fileName": "violin_solo",
+            "directory": "InstrumentalStyles"
+        }
+    ],
+    "VocalTechniques": [
+        {
+            "id": "acappella",
+            "fileName": "acappella",
+            "directory": "VocalTechniques"
+        },
+        {
+            "id": "bbox",
+            "fileName": "bbox",
+            "directory": "VocalTechniques"
+        },
+        {
+            "id": "dead-rock",
+            "fileName": "dead_rock",
+            "directory": "VocalTechniques"
+        },
+        {
+            "id": "female-nana",
+            "fileName": "female_nana",
+            "directory": "VocalTechniques"
+        },
+        {
+            "id": "opera-female",
+            "fileName": "opera_female",
+            "directory": "VocalTechniques"
+        }
+    ],
+    "MultipleLang": [
+        {
+            "id": "french-pop",
+            "fileName": "french_pop",
+            "directory": "MultipleLang"
+        },
+        {
+            "id": "german-dance",
+            "fileName": "german_dance",
+            "directory": "MultipleLang"
+        },
+        {
+            "id": "italian-folk",
+            "fileName": "italian_folk",
+            "directory": "MultipleLang"
+        },
+        {
+            "id": "jpop",
+            "fileName": "jpop",
+            "directory": "MultipleLang"
+        },
+        {
+            "id": "kpop",
+            "fileName": "kpop",
+            "directory": "MultipleLang"
+        },
+        {
+            "id": "portuguese-pop",
+            "fileName": "portuguese_pop",
+            "directory": "MultipleLang"
+        },
+        {
+            "id": "russian-folk",
+            "fileName": "russian_folk",
+            "directory": "MultipleLang"
+        },
+        {
+            "id": "spanish-song",
+            "fileName": "spanish_song",
+            "directory": "MultipleLang"
+        }
+    ],
+    "Controlability-retake": [
+        {
+            "id": "orig",
+            "fileName": "orig",
+            "directory": "Controlability-retake"
+        },
+        {
+            "id": "retake-variance1",
+            "fileName": "retake_variance1",
+            "directory": "Controlability-retake"
+        },
+        {
+            "id": "retake-variance2",
+            "fileName": "retake_variance2",
+            "directory": "Controlability-retake"
+        },
+        {
+            "id": "retake-variance3",
+            "fileName": "retake_variance3",
+            "directory": "Controlability-retake"
+        },
+        {
+            "id": "retake-variance4",
+            "fileName": "retake_variance4",
+            "directory": "Controlability-retake"
+        },
+        {
+            "id": "retake-variance5",
+            "fileName": "retake_variance5",
+            "directory": "Controlability-retake"
+        },
+        {
+            "id": "retake-variance6",
+            "fileName": "retake_variance6",
+            "directory": "Controlability-retake"
+        }
+    ],
+    "Controlability-repaint": [
+        {
+            "id": "a-repaint-orig",
+            "fileName": "a_repaint_orig",
+            "directory": "Controlability-repaint"
+        },
+        {
+            "id": "repaint-0-30-variance10-change-female",
+            "fileName": "repaint_0_30_variance10_change_female",
+            "directory": "Controlability-repaint"
+        },
+        {
+            "id": "repaint-0-30-variance10-change-genre",
+            "fileName": "repaint_0_30_variance10_change_genre",
+            "directory": "Controlability-repaint"
+        },
+        {
+            "id": "repaint-0-30-variance10-change-lyrics",
+            "fileName": "repaint_0_30_variance10_change_lyrics",
+            "directory": "Controlability-repaint"
+        },
+        {
+            "id": "repaint-0-30-variance7",
+            "fileName": "repaint_0_30_variance7",
+            "directory": "Controlability-repaint"
+        }
+    ],
+    "Application-Lyric2Vocal": [
+        {
+            "id": "lyrics2vocal-in-you-i-see",
+            "fileName": "lyrics2vocal_in_you_i_see",
+            "directory": "Application-Lyric2Vocal"
+        },
+        {
+            "id": "lyrics2vocal-lemonade",
+            "fileName": "lyrics2vocal_lemonade",
+            "directory": "Application-Lyric2Vocal"
+        },
+        {
+            "id": "lyrics2vocal-turn-me-on",
+            "fileName": "lyrics2vocal_turn_me_on",
+            "directory": "Application-Lyric2Vocal"
+        },
+        {
+            "id": "lyrics2vocal-whispering-shadows",
+            "fileName": "lyrics2vocal_whispering_shadows",
+            "directory": "Application-Lyric2Vocal"
+        },
+        {
+            "id": "lyrics2vocal-you-been-chosen-too",
+            "fileName": "lyrics2vocal_you_been_chosen_too",
+            "directory": "Application-Lyric2Vocal"
+        }
+    ],
+    "Text2Sample": [
+        {
+            "id": "text2samples-acounstic-guitar",
+            "fileName": "text2samples_acounstic_guitar",
+            "directory": "Text2Sample"
+        },
+        {
+            "id": "text2samples-bass",
+            "fileName": "text2samples_bass",
+            "directory": "Text2Sample"
+        },
+        {
+            "id": "text2samples-drums",
+            "fileName": "text2samples_drums",
+            "directory": "Text2Sample"
+        },
+        {
+            "id": "text2samples-drums-grooves",
+            "fileName": "text2samples_drums_grooves",
+            "directory": "Text2Sample"
+        },
+        {
+            "id": "text2samples-edrum",
+            "fileName": "text2samples_edrum",
+            "directory": "Text2Sample"
+        },
+        {
+            "id": "text2samples-electric-guitar",
+            "fileName": "text2samples_electric_guitar",
+            "directory": "Text2Sample"
+        },
+        {
+            "id": "text2samples-erhu",
+            "fileName": "text2samples_erhu",
+            "directory": "Text2Sample"
+        },
+        {
+            "id": "text2samples-flute",
+            "fileName": "text2samples_flute",
+            "directory": "Text2Sample"
+        },
+        {
+            "id": "text2samples-guitar",
+            "fileName": "text2samples_guitar",
+            "directory": "Text2Sample"
+        },
+        {
+            "id": "text2samples-hand-pan",
+            "fileName": "text2samples_hand_pan",
+            "directory": "Text2Sample"
+        },
+        {
+            "id": "text2samples-koto",
+            "fileName": "text2samples_koto",
+            "directory": "Text2Sample"
+        },
+        {
+            "id": "text2samples-lead-guitar",
+            "fileName": "text2samples_lead_guitar",
+            "directory": "Text2Sample"
+        },
+        {
+            "id": "text2samples-pad",
+            "fileName": "text2samples_pad",
+            "directory": "Text2Sample"
+        },
+        {
+            "id": "text2samples-saxphone",
+            "fileName": "text2samples_saxphone",
+            "directory": "Text2Sample"
+        },
+        {
+            "id": "text2samples-synth",
+            "fileName": "text2samples_synth",
+            "directory": "Text2Sample"
+        },
+        {
+            "id": "text2samples-violin",
+            "fileName": "text2samples_violin",
+            "directory": "Text2Sample"
+        }
+    ]
+}

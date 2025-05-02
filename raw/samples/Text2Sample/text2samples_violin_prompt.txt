@@ -1,0 +1,1 @@
+melody, G min keyscale, acoustic, 105.0 bpm, violin, Arabic

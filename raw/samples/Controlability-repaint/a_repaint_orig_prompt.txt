@@ -1,0 +1,2 @@
+We can repaint any specified area. To demonstrate the power and flexibility of repaint, here’s an example using a 0-30 second repaint
+orig style is "pop, rap, electronic, blues, hip-house, rhythm and blues"

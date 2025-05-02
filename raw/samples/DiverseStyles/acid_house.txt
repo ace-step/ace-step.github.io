@@ -1,0 +1,55 @@
+<SONG_PROMPT>
+<HEADER>
+[STYLE: Electro-Acid House]
+[MOOD: Energetic, Raw, Hypnotic, Futuristic]
+[INSTRUMENTATION: Acid Basslines (TB-303 style), Punchy Kicks, 
+Snappy Claps, Crisp Hi-Hats, Retro Synth Leads, 
+Modular Sequences, Atmospheric Pads, Industrial FX]
+[TEMPO: 128 BPM]
+[PRODUCTION: Raw Energy, Dynamic Acid Sequences, Smooth Transitions, 
+Layered Percussion, Impactful Drops]
+[INFLUENCES: Boys Noize, Nina Kraviz, DJ Pierre, Tiga, Daft Punk]
+</HEADER>
+<SONG_MODULES>
+<INTRO>
+[Punchy kick and filtered acid bassline create a raw, pulsating groove.]
+[Crisp hi-hats and sharp claps build rhythm and energy.]
+[Subtle atmospheric pads and industrial FX add a futuristic edge.]
+</INTRO>
+
+<BUILD_UP_1>
+[Acid bassline evolves with increasing resonance and modulation.]
+[Layered arpeggios and dynamic percussion heighten tension.]
+[Industrial sweeps and risers build momentum toward the first drop.]
+</BUILD_UP_1>
+
+<DROP_1>
+[Full-power acid bassline dominates with high resonance and distortion.]
+[Punchy kicks, tight claps, and retro synth leads drive the groove.]
+[Layered FX and rolling hi-hats enhance the hypnotic energy.]
+</DROP_1>
+
+<BREAKDOWN>
+[Acid bassline filters down, leaving spacious pads and soft arpeggios.]
+[Minimal percussion and subtle FX create a reflective atmosphere.]
+[Tension rises with evolving synths and a return of the acid groove.]
+</BREAKDOWN>
+
+<BUILD_UP_2>
+[Acid bassline returns with more aggressive modulation and drive.]
+[Percussion layers intensify with fast-paced hi-hats and snare rolls.]
+[Industrial FX and arpeggios ascend, leading to the second drop.]
+</BUILD_UP_2>
+
+<DROP_2>
+[Acid bassline peaks with full distortion, driving raw energy.]
+[Kicks, claps, and sharp hi-hats deliver a relentless groove.]
+[FX sweeps and modular sequences add depth and complexity.]
+</DROP_2>
+
+<OUTRO>
+[Bassline and percussion gradually fade, leaving atmospheric pads.]
+[Filtered acid sequences echo softly as the track fades to silence.]
+</OUTRO>
+</SONG_MODULES>
+</SONG_PROMPT>

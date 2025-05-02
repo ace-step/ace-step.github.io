@@ -1,0 +1,1 @@
+fx, music, koto, melody, G min keyscale, strings, 90.0 bpm, loops

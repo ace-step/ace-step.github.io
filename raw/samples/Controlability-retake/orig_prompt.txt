@@ -1,0 +1,1 @@
+The original style is funk/pop/soul/melodic. We can generate variations with adjustable similarity—higher 'variance' means more divergence from the original.
