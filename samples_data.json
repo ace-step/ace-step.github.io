@@ -286,6 +286,43 @@
             "directory": "Controlability-repaint"
         }
     ],
+    "Controlability-edit": [
+        {
+            "id": "edit-0-orig",
+            "fileName": "edit_0_orig",
+            "directory": "Controlability-edit"
+        },
+        {
+            "id": "edit-1-ilovebaby",
+            "fileName": "edit_1_ilovebaby",
+            "directory": "Controlability-edit"
+        },
+        {
+            "id": "edit-2-shabi",
+            "fileName": "edit_2_shabi",
+            "directory": "Controlability-edit"
+        },
+        {
+            "id": "edit-3-siji",
+            "fileName": "edit_3_siji",
+            "directory": "Controlability-edit"
+        },
+        {
+            "id": "edit-4-nanyou",
+            "fileName": "edit_4_nanyou",
+            "directory": "Controlability-edit"
+        },
+        {
+            "id": "edit-5-ja",
+            "fileName": "edit_5_ja",
+            "directory": "Controlability-edit"
+        },
+        {
+            "id": "edit-6-ko",
+            "fileName": "edit_6_ko",
+            "directory": "Controlability-edit"
+        }
+    ],
     "Application-Lyric2Vocal": [
         {
             "id": "lyrics2vocal-in-you-i-see",

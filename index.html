@@ -1019,9 +1019,7 @@
           <ul>
             <li><a href="#Controlability-retake">Variations Generation</a></li>
             <li><a href="#Controlability-repaint">Repainting</a></li>
-            <li><a href="#LyricEdit">Lyric Edit (no change in melody)</a></li>
-            <li><a href="#Remix">Remix</a></li>
-            <li><a href="#Extend">Extend</a></li>
+            <li><a href="#Controlability-edit">Lyric Edit</a></li>
           </ul>
         </li>
         <li><a href="#Application">Application</a></li>
@@ -1124,6 +1122,18 @@
     <!-- Hidden audio element for the global player -->
     <audio id="global-audio" preload="none"></audio>
   </div>
+<section class="main-content">
+    <h2 id="limitations" style="text-align: center;">Limitations & Future Improvements</h2>
+    <div style="border-left: 4px solid #FF3270; padding-left: 15px; margin-bottom: 20px;">
+      <ol>
+        <li><strong>Output Inconsistency:</strong> Highly sensitive to random seeds and input duration, leading to varied "gacha-style" results.</li>
+        <li><strong>Style-specific Weaknesses:</strong> Underperforms on certain genres (e.g. Chinese rap/zh_rap) Limited style adherence and musicality ceiling</li>
+        <li><strong>Continuity Artifacts:</strong> Unnatural transitions in repainting/extend operations</li>
+        <li><strong>Vocal Quality:</strong> Coarse vocal synthesis lacking nuance</li>
+        <li><strong>Control Granularity:</strong> Needs finer-grained musical parameter control</li>
+      </ol>
+    </div>
+  </section>
 </body>
 
 </html>

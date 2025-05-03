@@ -13,6 +13,7 @@ $directories = [
     'MultipleLang',
     'Controlability-retake',
     'Controlability-repaint',
+    'Controlability-edit',
     'Application-Lyric2Vocal',
     'Text2Sample'
 ];
