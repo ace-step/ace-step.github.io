@@ -373,15 +373,119 @@
             sectionTitle = 'Variations Generation';
           } else if (sectionId === 'Controlability-repaint') {
               sectionTitle = 'Repaint';
+          } else if (sectionId === 'Controlability-edit') {
+            sectionTitle = 'Edit';
           } else if (sectionId === 'Application-Lyric2Vocal') {
             sectionTitle = 'Lyric2Vocal (LoRA)';
           } else if (sectionId === 'Text2Sample') {
             sectionTitle = 'Text2Samples (LoRA)';
           }
 
-          sectionCell.textContent = sectionTitle;
+          // Clear existing content
+          sectionCell.textContent = '';
+          
+          // Create title element with more prominent styling
+          const titleElement = document.createElement('div');
+          titleElement.textContent = sectionTitle;
+          titleElement.style.marginBottom = '15px';
+          titleElement.style.fontSize = '1.3em';
+          titleElement.style.fontWeight = 'bold';
+          titleElement.style.color = '#333';
+          titleElement.style.letterSpacing = '1px';
+          sectionCell.appendChild(titleElement);
+          
+          // Add note div based on section ID with distinct styling
+          const noteDiv = document.createElement('div');
+          noteDiv.style.borderLeft = '4px solid #097EFF';
+          noteDiv.style.paddingLeft = '15px';
+          noteDiv.style.marginBottom = '10px';
+          noteDiv.style.textAlign = 'left';
+          noteDiv.style.fontSize = '0.85em';
+          noteDiv.style.color = '#606c71';
+          noteDiv.style.backgroundColor = '#f8f9fa';
+          noteDiv.style.padding = '8px 15px';
+          noteDiv.style.borderRadius = '0 4px 4px 0';
+          
+          const noteTitle = document.createElement('p');
+          noteTitle.style.fontWeight = 'bold';
+          noteTitle.style.marginBottom = '8px';
+          noteTitle.style.color = '#097EFF';
+          noteTitle.style.fontSize = '1em';
+          noteTitle.style.borderBottom = '1px solid #dee2e6';
+          noteTitle.style.paddingBottom = '4px';
+          noteTitle.textContent = 'Note:';
+          noteDiv.appendChild(noteTitle);
+          
+          // Add specific notes based on section ID
+          if (sectionId === 'DiverseStyles') {
+            addNoteItem(noteDiv, 'Supports all mainstream music styles with various description formats including short tags, descriptive text, or use-case scenarios.');
+          } else if (sectionId === 'InstrumentalStyles') {
+            addNoteItem(noteDiv, 'Supports various instrumental music generation across different genres and styles.');
+            addNoteItem(noteDiv, 'Capable of producing realistic instrumental tracks with appropriate timbre and expression for each instrument.');
+            addNoteItem(noteDiv, 'Can generate complex arrangements with multiple instruments while maintaining musical coherence.');
+          } else if (sectionId === 'VocalTechniques') {
+            addNoteItem(noteDiv, 'Capable of rendering various vocal styles and techniques with good quality.');
+            addNoteItem(noteDiv, 'While audio quality may have some limitations, the system shows promising potential in vocal synthesis.');
+            addNoteItem(noteDiv, 'Supports different vocal expressions including various singing techniques and styles.');
+          } else if (sectionId === 'MultipleLang') {
+            addNoteItem(noteDiv, '19 languages are supported. But due to data imbalance, less common languages may underperform. Top 10 well-performing languages are:');
+            const langList = document.createElement('p');
+            langList.style.margin = '0';
+            langList.style.paddingLeft = '15px';
+            langList.innerHTML = '• English<br>• Chinese<br>• Russian<br>• Spanish<br>• Japanese<br>• German<br>• French<br>• Portuguese<br>• Italian<br>• Korean';
+            noteDiv.appendChild(langList);
+          } else if (sectionId === 'Controlability-retake') {
+            addNoteItem(noteDiv, 'This feature is implemented using training-free, inference-time optimization techniques.');
+            addNoteItem(noteDiv, 'Our flow-matching model generates initial noise, then uses trigFlow\'s noise formula to add additional Gaussian noise.');
+            addNoteItem(noteDiv, 'By controlling the mixing ratio between the original initial noise and the new Gaussian noise, we can adjust the degree of variation in the generated output.');
+          } else if (sectionId === 'Controlability-repaint') {
+            addNoteItem(noteDiv, 'Implemented by adding noise to the target audio input and applying mask constraints during the ODE process.');
+            addNoteItem(noteDiv, 'When input conditions change from the original generation, only specific aspects can be modified while preserving the rest.');
+            addNoteItem(noteDiv, 'Combined with Variations Generation techniques, it can also create localized variations in style, lyrics, or vocals.');
+          } else if (sectionId === 'Controlability-edit') {
+            addNoteItem(noteDiv, 'We\'ve innovatively applied flow-edit technology to enable localized lyric modifications while preserving melody, vocals, and accompaniment.');
+            addNoteItem(noteDiv, 'Works with both generated content and uploaded audio, greatly enhancing creative possibilities.');
+            addNoteItem(noteDiv, 'Current limitation: can only modify small segments of lyrics at once to avoid distortion, but multiple edits can be applied sequentially.');
+          } else if (sectionId === 'Application-Lyric2Vocal') {
+            addNoteItem(noteDiv, 'Based on a LoRA fine-tuned on pure vocal data, allowing direct generation of vocal samples from lyrics.');
+            addNoteItem(noteDiv, 'Offers numerous practical applications such as vocal demos, guide tracks, songwriting assistance, and vocal arrangement experimentation.');
+            addNoteItem(noteDiv, 'Provides a quick way to test how lyrics might sound when sung, helping songwriters iterate faster.');
+          } else if (sectionId === 'Text2Sample') {
+            addNoteItem(noteDiv, 'Similar to Lyric2Vocal, but fine-tuned on pure instrumental and sample data.');
+            addNoteItem(noteDiv, 'Capable of generating conceptual music production samples from text descriptions.');
+            addNoteItem(noteDiv, 'Useful for quickly creating instrument loops, sound effects, and musical elements for production.');
+          } else if (sectionId === 'RapMachine') {
+            addNoteItem(noteDiv, 'Fine-tuned on pure rap data to create an AI system specialized in rap generation.');
+            addNoteItem(noteDiv, 'Expected capabilities include AI rap battles and narrative expression through rap.');
+            addNoteItem(noteDiv, 'Rap has exceptional storytelling and expressive capabilities, offering extraordinary application potential.');
+          } else if (sectionId === 'StemGen') {
+            addNoteItem(noteDiv, 'A controlnet-lora trained on multi-track data to generate individual instrument stems.');
+            addNoteItem(noteDiv, 'Takes a reference track and specified instrument (or instrument reference audio) as input.');
+            addNoteItem(noteDiv, 'Outputs an instrument stem that complements the reference track, such as creating a piano accompaniment for a flute melody or adding jazz drums to a lead guitar.');
+          } else if (sectionId === 'Singing2Accompaniment') {
+            addNoteItem(noteDiv, 'The reverse process of StemGen, generating a mixed master track from a single vocal track.');
+            addNoteItem(noteDiv, 'Takes a vocal track and specified style as input to produce a complete vocal accompaniment.');
+            addNoteItem(noteDiv, 'Creates full instrumental backing that complements the input vocals, making it easy to add professional-sounding accompaniment to any vocal recording.');
+          }
+          
+          // Add the note div to the section cell if it has content
+          if (noteDiv.childNodes.length > 1) {
+            sectionCell.appendChild(noteDiv);
+          }
+          
           sectionRow.appendChild(sectionCell);
           tbody.appendChild(sectionRow);
+          
+          // Helper function to add note items
+          function addNoteItem(parent, text) {
+            const noteItem = document.createElement('p');
+            noteItem.style.margin = '0 0 6px 0';
+            noteItem.style.lineHeight = '1.4';
+            noteItem.style.textIndent = '-12px';
+            noteItem.style.paddingLeft = '12px';
+            noteItem.textContent = '- ' + text;
+            parent.appendChild(noteItem);
+          }
 
           // Add samples for this section
           samples.forEach(sample => {
@@ -920,6 +1024,13 @@
         <span style="font-size: 24px;">Hugging Face</span>
       </a>
 
+      <a href="#" class="arxiv-link" target="_blank" rel="noopener noreferrer" style="margin-right: 20px;" onclick="return false;">
+        <svg fill="currentColor" height="28" width="28" viewBox="0 0 512 512">
+          <path d="M128 0C74.98 0 32 42.98 32 96v320c0 53.02 42.98 96 96 96h256c53.02 0 96-42.98 96-96V96c0-53.02-42.98-96-96-96H128zM400 432H112c-8.836 0-16-7.164-16-16V96c0-8.838 7.164-16 16-16h288c8.836 0 16 7.162 16 16v320c0 8.836-7.164 16-16 16zM192 128h-48c-8.836 0-16 7.162-16 16v32c0 8.836 7.164 16 16 16h48c8.836 0 16-7.164 16-16v-32c0-8.838-7.164-16-16-16zm176 0h-48c-8.836 0-16 7.162-16 16v32c0 8.836 7.164 16 16 16h48c8.836 0 16-7.164 16-16v-32c0-8.838-7.164-16-16-16zM192 224h-48c-8.836 0-16 7.164-16 16v32c0 8.836 7.164 16 16 16h48c8.836 0 16-7.164 16-16v-32c0-8.836-7.164-16-16-16zm176 0h-48c-8.836 0-16 7.164-16 16v32c0 8.836 7.164 16 16 16h48c8.836 0 16-7.164 16-16v-32c0-8.836-7.164-16-16-16zM192 320h-48c-8.836 0-16 7.164-16 16v32c0 8.836 7.164 16 16 16h48c8.836 0 16-7.164 16-16v-32c0-8.836-7.164-16-16-16z"/>
+        </svg>
+        <span style="font-size: 24px;">Paper (Coming Soon)</span>
+      </a>
+
       <a href="https://huggingface.co/spaces/ACE-Step/ACE-Step" class="huggingface-link" target="_blank"
         rel="noopener noreferrer">
         <svg class="size-8 mr-1.5 dark:mr-2 dark:drop-shadow-md" xmlns="http://www.w3.org/2000/svg"
@@ -963,7 +1074,7 @@
       exceptional musical coherence and lyric alignment across metrics for melody, harmony, and rhythmic consistency. By
       preserving fine-grained acoustic details,
       ACE-Step supports sophisticated control mechanisms, including voice cloning, lyric-editing, remixing, and track
-      generation (e.g., lyric2vocal or singing2bgm).
+      generation (e.g., lyric2vocal or Singing2Accompaniment).
     </p>
 
     <p style="text-align: justify;">
@@ -1026,12 +1137,18 @@
         <ul>
           <li><a href="#Application-Lyric2Vocal">Lyric2Vocal</a></li>
           <li><a href="#Text2Sample">Text2Sample</a></li>
+        </ul>
+        <li><a href="#CommingSoon">Coming Soon</a></li>
+          <ul>
           <li><a href="#RapMachine">RapMachine</a></li>
           <li><a href="#StemGen">StemGen</a></li>
-          <li><a href="#Singing2bgm">Singing2bgm</a></li>
+          <li><a href="#Singing2Accompaniment">Singing2Accompaniment</a></li>
         </ul>
       </ul>
     </div>
+    <figure>
+      <img src="raw/fig/application_map.png" alt="framework" width="1000" height="600">
+    </figure>
     <h1 id="BaselineQuality" style="text-align: center;">Baseline Quality<a name="BaselineQuality"></a></h1>
 
     <h2 id="DiverseStyles">Modeling Diverse Genres & Vocal Styles<a name="DiverseStyles"></a></h2>
@@ -1040,11 +1157,9 @@
       <p style="margin: 0;"> - Lyrics are random picked from AI music generation community or internet and not in our training set.</p>
       <p style="margin: 0;"> - Existing models either lack length control (LLMs) or are fixed-length (diffusion). We
         enable flexible length for practical music composition.</p>
-      <p style="margin: 0;"> - Unlike rigid academic tags in open-source models, ours adapt to natural
-        language—supporting comma-separated tags tags, long descriptions, or scene-based inputs.</p>
-        <p style="margin: 0;"> - 19 languages are supported. But due to data imbalance, less common languages may underperform. Here are the top 10 best-performing languages</p>
         <p style="margin: 0;"> - B.T.W., the project page is vibe coded by Roocode. 😊</p>
     </div>
+
     <div class="fixed-toggle-container">
       <button id="toggle-all-lyrics" class="toggle-all-button">Collapse All Lyrics</button>
     </div>
@@ -1061,22 +1176,6 @@
         <!-- Table rows will be dynamically generated by JavaScript -->
       </tbody>
     </table>
-
-    <!-- <h2 id="MultipleLang">Multiple Languages<a name="MultipleLang"></a></h2>
-    <div style="border-left: 4px solid #FFD702; padding-left: 15px; margin-bottom: 20px;">
-      <p style="font-weight: bold; margin-bottom: 5px;">Note:</p>
-      <p style="margin: 0;"> - Our model theoretically supports 19 languages, but due to data imbalance, less common
-        languages may underperform. Here are the top 10 best-performing languages:
-        - English
-        - Chinese
-        - Russian
-        - Spanish
-        - Japanese
-        - German
-        - French
-        - Portuguese
-        - Italian
-        - Korean</p> -->
     </div>
 
   </section>
