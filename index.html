@@ -131,7 +131,7 @@
       bottom: 0;
       left: 0;
       width: 100%;
-      background-color: #121212;
+      background-color: #333;
       border-top: 1px solid #222;
       padding: 10px 20px;
       box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
@@ -518,7 +518,7 @@
 
             const lyricsHeader = document.createElement('div');
             lyricsHeader.className = 'lyrics-header';
-            lyricsHeader.textContent = '📝 Lyrics';
+            lyricsHeader.textContent = 'Lyrics';
 
             const toggleIcon = document.createElement('span');
             toggleIcon.className = 'toggle-icon';
@@ -738,12 +738,53 @@
           playerTrackTitle.textContent = track.fileName.replace(/_/g, ' ');
           playerTrackGenre.textContent = track.id.replace(/-/g, ' ');
 
-          // Set a placeholder album art (since we don't have actual album art)
-          playerAlbumArt.src = 'raw/fig/acestudio_logo.png'; // Using an existing image as placeholder
+          // Generate random colorful SVG as album art
+          const getRandomColor = () => {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+              color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+          };
+          
+          // Create a random music-themed SVG
+          const bgColor = getRandomColor();
+          const fgColor = getRandomColor();
+          const svgPatterns = [
+            // Music note pattern
+            `<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+              <rect width="200" height="200" fill="${bgColor}"/>
+              <path d="M80 30 L80 130 Q80 150 60 150 Q40 150 40 130 Q40 110 60 110 Q70 110 80 120 M120 50 L120 110 Q120 130 100 130 Q80 130 80 110 Q80 90 100 90 Q110 90 120 100" stroke="${fgColor}" stroke-width="8" fill="none"/>
+            </svg>`,
+            // Equalizer pattern
+            `<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+              <rect width="200" height="200" fill="${bgColor}"/>
+              <rect x="40" y="40" width="20" height="120" fill="${fgColor}"/>
+              <rect x="80" y="80" width="20" height="80" fill="${fgColor}"/>
+              <rect x="120" y="20" width="20" height="140" fill="${fgColor}"/>
+              <rect x="160" y="60" width="20" height="100" fill="${fgColor}"/>
+            </svg>`,
+            // Vinyl record pattern
+            `<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+              <rect width="200" height="200" fill="${bgColor}"/>
+              <circle cx="100" cy="100" r="80" fill="${fgColor}"/>
+              <circle cx="100" cy="100" r="30" fill="${bgColor}"/>
+              <circle cx="100" cy="100" r="10" fill="${fgColor}"/>
+            </svg>`
+          ];
+          
+          // Select a random SVG pattern
+          const randomSvg = svgPatterns[Math.floor(Math.random() * svgPatterns.length)];
+          
+          // Convert SVG to data URL
+          const svgDataUrl = 'data:image/svg+xml;base64,' + btoa(randomSvg);
+          playerAlbumArt.src = svgDataUrl;
           playerAlbumArt.style.display = 'block';
+          playerAlbumArt.style.backgroundColor = 'transparent';
 
           // Show loading indicator
-          playerPlayBtn.innerHTML = '⏳️'; // Loading icon
+          playerPlayBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 fill-primary"><path d="M12 4V2A10 10 0 0 0 2 12h2a8 8 0 0 1 8-8z"><animateTransform attributeName="transform" type="rotate" from="0 12 12" to="360 12 12" dur="1s" repeatCount="indefinite"/></path></svg>'; // Loading icon
 
           try {
             // Get optimized audio URL using AudioLoader
@@ -753,7 +794,7 @@
             globalAudio.src = audioUrl;
             await globalAudio.play();
 
-            playerPlayBtn.innerHTML = '❚❚'; // Pause icon
+            playerPlayBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 fill-primary"><path d="M8 19c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2s-2 .9-2 2v10c0 1.1.9 2 2 2zm8-2V7c0-1.1-.9-2-2-2s-2 .9-2 2v10c0 1.1.9 2 2 2s2-.9 2-2z"></path></svg>'; // Pause icon
             globalPlayer.classList.add('visible'); // Show the player
             updateTrackButtons(); // Update all track buttons
             scrollToCurrentTrackLyrics(); // Scroll to the lyrics
@@ -762,7 +803,7 @@
             console.log(`Playing ${track.fileName} from: ${audioUrl}`);
           } catch (error) {
             console.error('Error playing audio:', error);
-            playerPlayBtn.innerHTML = '▶'; // Reset to play icon
+            playerPlayBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 fill-primary"><path d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18a1 1 0 0 0 0-1.69L9.54 5.98A.998.998 0 0 0 8 6.82z"></path></svg>'; // Reset to play icon
           }
 
           // Update play queue
@@ -856,7 +897,7 @@
           if (globalAudio.src) {
             globalAudio.play()
               .then(() => {
-                playerPlayBtn.innerHTML = '❚❚'; // Pause icon
+                playerPlayBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 fill-primary"><path d="M8 19c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2s-2 .9-2 2v10c0 1.1.9 2 2 2zm8-2V7c0-1.1-.9-2-2-2s-2 .9-2 2v10c0 1.1.9 2 2 2s2-.9 2-2z"></path></svg>'; // Pause icon
                 updateTrackButtons();
               });
           } else if (playQueue.length > 0) {
@@ -865,7 +906,7 @@
           }
         } else {
           globalAudio.pause();
-          playerPlayBtn.innerHTML = '▶'; // Play icon
+          playerPlayBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 fill-primary"><path d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18a1 1 0 0 0 0-1.69L9.54 5.98A.998.998 0 0 0 8 6.82z"></path></svg>'; // Play icon
           updateTrackButtons();
         }
       });
@@ -999,13 +1040,13 @@
 
     <center>✨ Junmin Gong, Wenxiao Zhao, Sen Wang, Shengyuan Xu, Jing Guo ✨</center>
     <br>
-    <div style="display: flex; justify-content: center; align-items: center; margin-top: -40px; margin-bottom: 10px;">
+    <div style="display: flex; justify-content: center; align-items: center; margin-top: -10px; margin-bottom: 30px;">
       <a href="https://acestudio.ai" style="margin: 0 10px;">
         <figure style="margin: 0;"><img src="raw/fig/acestudio_logo.png" alt="acestudio_logo" style="max-width: 230px;">
         </figure>
       </a>
       <a href="https://www.stepfun.com/" style="margin: 0 10px;">
-        <figure style="margin: 0;"><img src="raw/fig/stepfun_logo.png" alt="stepfun_logo" style="max-width: 300px;">
+        <figure style="margin: 0;"><img src="raw/fig/Logo_StepFun.png" alt="stepfun_logo" style="max-width: 230px;">
         </figure>
       </a>
     </div>
@@ -1191,8 +1232,8 @@
   <div id="global-player">
     <div class="player-track-info">
       <div class="album-art">
-        <img id="player-album-art" src="raw/fig/acestudio_logo.png" alt="Album Art"
-          style="width: 50px; height: 50px; border-radius: 4px; margin-right: 10px;">
+        <img id="player-album-art" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=" alt="Album Art"
+          style="width: 50px; height: 50px; border-radius: 4px; margin-right: 10px; background-color: #000000;">
       </div>
       <div class="track-details">
         <div class="player-track-title">Nergal Dubstep</div>
@@ -1201,12 +1242,11 @@
     </div>
 
     <div class="player-controls">
-      <button id="player-prev-btn" class="player-btn" title="Previous Track"><</button>
-      <button id="player-play-btn" class="player-btn player-play-btn" title="Play/Pause">▶</button>
-      <button id="player-next-btn" class="player-btn" title="Next Track">></button>
-      <button id="player-shuffle-btn" class="player-btn" title="Shuffle">🔀 <span
-          class="mode-indicator"></span></button>
-      <button id="player-repeat-btn" class="player-btn" title="Repeat">🔁 <span class="mode-indicator"></span></button>
+      <button id="player-prev-btn" class="player-btn" title="Previous Track"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 fill-primary"><g><path d="M8 17V7a.97.97 0 0 0-.287-.713A.97.97 0 0 0 7 6a.97.97 0 0 0-.713.287A.97.97 0 0 0 6 7v10q0 .424.287.712Q6.576 18 7 18q.424 0 .713-.288A.97.97 0 0 0 8 17m11-.875v-8.25q0-.45-.3-.725a1 1 0 0 0-.7-.275q-.125 0-.275.025a.6.6 0 0 0-.275.125l-6.2 4.15q-.225.15-.338.362A1 1 0 0 0 10.8 12q0 .25.112.463a1 1 0 0 0 .338.362l6.2 4.15a.6.6 0 0 0 .275.125q.15.025.275.025.4 0 .7-.275t.3-.725"></path></g></svg></button>
+      <button id="player-play-btn" class="player-btn player-play-btn" title="Play/Pause"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 fill-primary"><path d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18a1 1 0 0 0 0-1.69L9.54 5.98A.998.998 0 0 0 8 6.82z"></path></svg></button>
+      <button id="player-next-btn" class="player-btn" title="Next Track"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 fill-primary"><g><path d="M16.5 17V7q0-.424.288-.713A.97.97 0 0 1 17.5 6q.424 0 .712.287.288.288.288.713v10q0 .424-.288.712A.97.97 0 0 1 17.5 18a.97.97 0 0 1-.712-.288A.97.97 0 0 1 16.5 17m-11-.875v-8.25q0-.45.3-.725t.7-.275q.125 0 .275.025a.6.6 0 0 1 .275.125l6.2 4.15q.225.15.338.362A1 1 0 0 1 13.7 12q0 .25-.112.463a1 1 0 0 1-.338.362l-6.2 4.15a.6.6 0 0 1-.275.125 2 2 0 0 1-.275.025q-.4 0-.7-.275t-.3-.725"></path></g></svg></button>
+      <button id="player-shuffle-btn" class="player-btn" title="Shuffle"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 fill-primary"><path d="M10.59 9.17L5.41 4 4 5.41l5.17 5.17 1.42-1.41zM14.5 4l2.04 2.04L4 18.59 5.41 20 17.96 7.46 20 9.5V4h-5.5zm.33 9.41l-1.41 1.41 3.13 3.13L14.5 20H20v-5.5l-2.04 2.04-3.13-3.13z"></path></svg> <span class="mode-indicator"></span></button>
+      <button id="player-repeat-btn" class="player-btn" title="Repeat"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 fill-primary"><path d="M7 7h10v3l4-4-4-4v3H5v6h2V7zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2v4z"></path></svg> <span class="mode-indicator"></span></button>
     </div>
 
     <div class="player-progress-container">
