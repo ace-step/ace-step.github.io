@@ -152,9 +152,6 @@
       flex: 0 0 250px;
       display: flex;
       align-items: center;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
       color: #fff;
     }
 
@@ -162,6 +159,8 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
+      width: 180px;
+      overflow: hidden;
     }
 
     .player-track-title {
@@ -169,12 +168,54 @@
       font-size: 18px;
       margin-bottom: 3px;
       color: #fff;
+      max-width: 180px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
 
     .player-track-genre {
       font-size: 12px;
       color: #888;
       text-transform: uppercase;
+      max-width: 180px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    
+    /* Add scrolling animation for long text */
+    .player-track-title.scrolling,
+    .player-track-genre.scrolling {
+      text-overflow: clip;
+      position: relative;
+      display: inline-block;
+      padding-right: 10px; /* Add some space at the end */
+      animation: marquee 10s linear infinite;
+      animation-delay: 1s; /* Delay before starting */
+    }
+    
+    /* Animation for scrolling text */
+    @keyframes marquee {
+      0%, 15% { transform: translateX(0); } /* Pause at the beginning */
+      85%, 100% { transform: translateX(calc(-100% + 180px)); } /* Stop when text is at the end of container */
+    }
+    
+    /* Different animation speeds based on content length */
+    .player-track-title.scrolling.length-medium,
+    .player-track-genre.scrolling.length-medium {
+      animation-duration: 15s;
+    }
+    
+    .player-track-title.scrolling.length-long,
+    .player-track-genre.scrolling.length-long {
+      animation-duration: 20s;
+    }
+    
+    /* Ensure the animation stays within the container */
+    .track-details {
+      position: relative;
+      overflow: hidden;
     }
 
     .player-controls {
@@ -737,6 +778,43 @@
           // Update player UI
           playerTrackTitle.textContent = track.fileName.replace(/_/g, ' ');
           playerTrackGenre.textContent = track.id.replace(/-/g, ' ');
+          
+          // Check if text is too long and apply scrolling if needed
+          setTimeout(() => {
+            // For track title
+            playerTrackTitle.classList.remove('scrolling', 'length-medium', 'length-long');
+            const titleText = playerTrackTitle.textContent;
+            playerTrackTitle.setAttribute('data-content', titleText); // Set content for ::after
+            
+            if (playerTrackTitle.scrollWidth > playerTrackTitle.clientWidth) {
+              playerTrackTitle.classList.add('scrolling');
+              
+              // Calculate ratio to determine animation speed
+              const ratio = playerTrackTitle.scrollWidth / playerTrackTitle.clientWidth;
+              if (ratio >= 2) {
+                playerTrackTitle.classList.add('length-long');
+              } else if (ratio >= 1.5) {
+                playerTrackTitle.classList.add('length-medium');
+              }
+            }
+            
+            // For track genre
+            playerTrackGenre.classList.remove('scrolling', 'length-medium', 'length-long');
+            const genreText = playerTrackGenre.textContent;
+            playerTrackGenre.setAttribute('data-content', genreText); // Set content for ::after
+            
+            if (playerTrackGenre.scrollWidth > playerTrackGenre.clientWidth) {
+              playerTrackGenre.classList.add('scrolling');
+              
+              // Calculate ratio to determine animation speed
+              const ratio = playerTrackGenre.scrollWidth / playerTrackGenre.clientWidth;
+              if (ratio >= 2) {
+                playerTrackGenre.classList.add('length-long');
+              } else if (ratio >= 1.5) {
+                playerTrackGenre.classList.add('length-medium');
+              }
+            }
+          }, 50); // Small timeout to ensure text is rendered
 
           // Generate random colorful SVG as album art
           const getRandomColor = () => {
