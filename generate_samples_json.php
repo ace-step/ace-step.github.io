@@ -7,9 +7,9 @@ $baseDir = 'flac/samples';
 
 // Directories to scan
 $directories = [
-    'DiverseStyles',
-    'InstrumentalStyles',
-    'VocalTechniques',
+    'GeneralSongs',
+    'Experimental',
+    'Instrumentals',
     'MultipleLang',
     'Controlability-retake',
     'Controlability-repaint',

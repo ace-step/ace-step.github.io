@@ -1,186 +1,181 @@
 {
-    "DiverseStyles": [
+    "GeneralSongs": [
         {
-            "id": "acid-house",
-            "fileName": "acid_house",
-            "directory": "DiverseStyles"
-        },
-        {
-            "id": "afro-cuban",
-            "fileName": "afro_cuban",
-            "directory": "DiverseStyles"
-        },
-        {
-            "id": "alternative-rock",
-            "fileName": "alternative_rock",
-            "directory": "DiverseStyles"
-        },
-        {
-            "id": "black-metal",
-            "fileName": "black_metal",
-            "directory": "DiverseStyles"
-        },
-        {
-            "id": "country-rock-woke-up-to-the-sunrise",
-            "fileName": "country_rock_woke_up_to_the_sunrise",
-            "directory": "DiverseStyles"
-        },
-        {
-            "id": "cyberpunk",
-            "fileName": "cyberpunk",
-            "directory": "DiverseStyles"
-        },
-        {
-            "id": "dark-atmospheric",
-            "fileName": "dark_atmospheric",
-            "directory": "DiverseStyles"
-        },
-        {
-            "id": "dark-electro",
-            "fileName": "dark_electro",
-            "directory": "DiverseStyles"
-        },
-        {
-            "id": "disco",
-            "fileName": "disco",
-            "directory": "DiverseStyles"
-        },
-        {
-            "id": "drum-bass",
-            "fileName": "drum_bass",
-            "directory": "DiverseStyles"
-        },
-        {
-            "id": "dubstep",
-            "fileName": "dubstep",
-            "directory": "DiverseStyles"
-        },
-        {
-            "id": "electro-house",
-            "fileName": "electro_house",
-            "directory": "DiverseStyles"
-        },
-        {
-            "id": "electronic-rap-waves-on",
-            "fileName": "electronic_rap_waves_on",
-            "directory": "DiverseStyles"
-        },
-        {
-            "id": "female-pop",
-            "fileName": "female_pop",
-            "directory": "DiverseStyles"
-        },
-        {
-            "id": "folk-rnb-female",
-            "fileName": "folk_rnb_female",
-            "directory": "DiverseStyles"
+            "id": "ace-step",
+            "fileName": "ace_step",
+            "directory": "GeneralSongs"
         },
         {
             "id": "funk-pop-neon-lights",
             "fileName": "funk_pop_neon_lights",
-            "directory": "DiverseStyles"
+            "directory": "GeneralSongs"
         },
         {
-            "id": "hip-house",
-            "fileName": "hip-house",
-            "directory": "DiverseStyles"
-        },
-        {
-            "id": "hiphop-rap-shirt-song",
-            "fileName": "hiphop_rap_shirt_song",
-            "directory": "DiverseStyles"
-        },
-        {
-            "id": "mandopop",
-            "fileName": "mandopop",
-            "directory": "DiverseStyles"
-        },
-        {
-            "id": "minimal-techno",
-            "fileName": "minimal_techno",
-            "directory": "DiverseStyles"
-        },
-        {
-            "id": "orchestral-rock",
-            "fileName": "orchestral_rock",
-            "directory": "DiverseStyles"
-        },
-        {
-            "id": "psychedelic",
-            "fileName": "psychedelic",
-            "directory": "DiverseStyles"
+            "id": "female-pop",
+            "fileName": "female_pop",
+            "directory": "GeneralSongs"
         },
         {
             "id": "surf-music",
             "fileName": "surf_music",
-            "directory": "DiverseStyles"
+            "directory": "GeneralSongs"
         },
         {
-            "id": "trance",
-            "fileName": "trance",
-            "directory": "DiverseStyles"
+            "id": "dubstep",
+            "fileName": "dubstep",
+            "directory": "GeneralSongs"
         },
         {
-            "id": "world-sad",
-            "fileName": "world_sad",
-            "directory": "DiverseStyles"
-        }
-    ],
-    "InstrumentalStyles": [
-        {
-            "id": "dance-party",
-            "fileName": "dance_party",
-            "directory": "InstrumentalStyles"
-        },
-        {
-            "id": "saxphone-jazz",
-            "fileName": "saxphone_jazz",
-            "directory": "InstrumentalStyles"
-        },
-        {
-            "id": "sonata-piano-violin",
-            "fileName": "sonata_piano_violin",
-            "directory": "InstrumentalStyles"
-        },
-        {
-            "id": "tango-guitar",
-            "fileName": "tango_guitar",
-            "directory": "InstrumentalStyles"
-        },
-        {
-            "id": "violin-solo",
-            "fileName": "violin_solo",
-            "directory": "InstrumentalStyles"
-        }
-    ],
-    "VocalTechniques": [
-        {
-            "id": "acappella",
-            "fileName": "acappella",
-            "directory": "VocalTechniques"
-        },
-        {
-            "id": "bbox",
-            "fileName": "bbox",
-            "directory": "VocalTechniques"
+            "id": "cyberpunk",
+            "fileName": "cyberpunk",
+            "directory": "GeneralSongs"
         },
         {
             "id": "dead-rock",
             "fileName": "dead_rock",
-            "directory": "VocalTechniques"
+            "directory": "Experimental"
+        },
+        {
+            "id": "afro-cuban",
+            "fileName": "afro_cuban",
+            "directory": "GeneralSongs"
+        },
+        {
+            "id": "alternative-rock",
+            "fileName": "alternative_rock",
+            "directory": "GeneralSongs"
+        },
+        {
+            "id": "black-metal",
+            "fileName": "black_metal",
+            "directory": "GeneralSongs"
+        },
+        {
+            "id": "country-rock",
+            "fileName": "country_rock",
+            "directory": "GeneralSongs"
+        },
+        {
+            "id": "dark-electro",
+            "fileName": "dark_electro",
+            "directory": "GeneralSongs"
+        },
+        {
+            "id": "disco",
+            "fileName": "disco",
+            "directory": "GeneralSongs"
+        },
+        {
+            "id": "electronic-rap-waves-on",
+            "fileName": "electronic_rap_waves_on",
+            "directory": "GeneralSongs"
+        },
+        {
+            "id": "hiphop-rap-shirt-song",
+            "fileName": "hiphop_rap_shirt_song",
+            "directory": "GeneralSongs"
+        },
+        {
+            "id": "orchestral-rock",
+            "fileName": "orchestral_rock",
+            "directory": "GeneralSongs"
+        },
+        {
+            "id": "world-sad",
+            "fileName": "world_sad",
+            "directory": "GeneralSongs"
+        }
+    ],
+    "Experimental": [
+        {
+            "id": "acappella",
+            "fileName": "acappella",
+            "directory": "Experimental"
+        },
+        {
+            "id": "acid-house",
+            "fileName": "acid_house",
+            "directory": "Experimental"
+        },
+        {
+            "id": "bbox",
+            "fileName": "bbox",
+            "directory": "Experimental"
+        },
+        {
+            "id": "drum-bass",
+            "fileName": "drum_bass",
+            "directory": "Experimental"
         },
         {
             "id": "female-nana",
             "fileName": "female_nana",
-            "directory": "VocalTechniques"
+            "directory": "Experimental"
         },
         {
             "id": "opera-female",
             "fileName": "opera_female",
-            "directory": "VocalTechniques"
+            "directory": "Experimental"
+        }
+    ],
+    "Instrumentals": [
+        {
+            "id": "dance-party",
+            "fileName": "dance_party",
+            "directory": "Instrumentals"
+        },
+        {
+            "id": "minimal-techno",
+            "fileName": "minimal_techno",
+            "directory": "Instrumentals"
+        },
+        {
+            "id": "psychedelic",
+            "fileName": "psychedelic",
+            "directory": "Instrumentals"
+        },
+        {
+            "id": "saxphone-jazz",
+            "fileName": "saxphone_jazz",
+            "directory": "Instrumentals"
+        },
+        {
+            "id": "sonata-piano-violin",
+            "fileName": "sonata_piano_violin",
+            "directory": "Instrumentals"
+        },
+        {
+            "id": "tango-guitar",
+            "fileName": "tango_guitar",
+            "directory": "Instrumentals"
+        },
+        {
+            "id": "trance",
+            "fileName": "trance",
+            "directory": "Instrumentals"
+        },
+        {
+            "id": "violin-solo",
+            "fileName": "violin_solo",
+            "directory": "Instrumentals"
         }
     ],
     "MultipleLang": [
+        {
+            "id": "dark-atmospheric",
+            "fileName": "dark_atmospheric",
+            "directory": "MultipleLang"
+        },
+        {
+            "id": "electro-house",
+            "fileName": "electro_house",
+            "directory": "MultipleLang"
+        },
+        {
+            "id": "folk-rnb-female",
+            "fileName": "folk_rnb_female",
+            "directory": "MultipleLang"
+        },
         {
             "id": "french-pop",
             "fileName": "french_pop",
@@ -189,6 +184,11 @@
         {
             "id": "german-dance",
             "fileName": "german_dance",
+            "directory": "MultipleLang"
+        },
+        {
+            "id": "hip-house",
+            "fileName": "hip-house",
             "directory": "MultipleLang"
         },
         {
@@ -204,6 +204,11 @@
         {
             "id": "kpop",
             "fileName": "kpop",
+            "directory": "MultipleLang"
+        },
+        {
+            "id": "mandopop",
+            "fileName": "mandopop",
             "directory": "MultipleLang"
         },
         {
