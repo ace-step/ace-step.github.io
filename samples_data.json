@@ -88,13 +88,13 @@
     ],
     "Experimental": [
         {
-            "id": "acappella",
-            "fileName": "acappella",
+            "id": "acid-house",
+            "fileName": "acid_house",
             "directory": "Experimental"
         },
         {
-            "id": "acid-house",
-            "fileName": "acid_house",
+            "id": "acappella",
+            "fileName": "acappella",
             "directory": "Experimental"
         },
         {
@@ -293,38 +293,63 @@
     ],
     "Controlability-edit": [
         {
-            "id": "edit-0-orig",
-            "fileName": "edit_0_orig",
+            "id": "edit-a-orig",
+            "fileName": "edit_a_orig",
             "directory": "Controlability-edit"
         },
         {
-            "id": "edit-1-ilovebaby",
-            "fileName": "edit_1_ilovebaby",
+            "id": "edit-cry",
+            "fileName": "edit_cry",
             "directory": "Controlability-edit"
         },
         {
-            "id": "edit-2-shabi",
-            "fileName": "edit_2_shabi",
+            "id": "edit-french",
+            "fileName": "edit_french",
             "directory": "Controlability-edit"
         },
         {
-            "id": "edit-3-siji",
-            "fileName": "edit_3_siji",
+            "id": "edit-gay",
+            "fileName": "edit_gay",
             "directory": "Controlability-edit"
         },
         {
-            "id": "edit-4-nanyou",
-            "fileName": "edit_4_nanyou",
+            "id": "edit-german",
+            "fileName": "edit_german",
             "directory": "Controlability-edit"
         },
         {
-            "id": "edit-5-ja",
-            "fileName": "edit_5_ja",
+            "id": "edit-ja",
+            "fileName": "edit_ja",
             "directory": "Controlability-edit"
         },
         {
-            "id": "edit-6-ko",
-            "fileName": "edit_6_ko",
+            "id": "edit-kid",
+            "fileName": "edit_kid",
+            "directory": "Controlability-edit"
+        },
+        {
+            "id": "edit-ko",
+            "fileName": "edit_ko",
+            "directory": "Controlability-edit"
+        },
+        {
+            "id": "edit-man",
+            "fileName": "edit_man",
+            "directory": "Controlability-edit"
+        },
+        {
+            "id": "edit-old",
+            "fileName": "edit_old",
+            "directory": "Controlability-edit"
+        },
+        {
+            "id": "edit-spotify",
+            "fileName": "edit_spotify",
+            "directory": "Controlability-edit"
+        },
+        {
+            "id": "edit-zh",
+            "fileName": "edit_zh",
             "directory": "Controlability-edit"
         }
     ],

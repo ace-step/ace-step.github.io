@@ -93,7 +93,7 @@ After creating the release, update the AudioLoader initialization in your HTML f
 
 ```javascript
 const audioLoader = new AudioLoader({
-  username: 'gongjunmin',
+  username: 'ace-step',
   repo: 'ace-step.github.io',
   releaseTag: 'v1.0.0', // Update this to your release tag
   useJsDelivr: true,

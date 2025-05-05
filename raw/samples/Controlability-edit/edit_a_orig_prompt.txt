@@ -1,2 +1,2 @@
-This is the input audio, the genre is "country, pop, folk"
+This is the input audio, the genre is "piano, pop, female voice"
 We can edit the part of lyrics but not change its melody, vocal timbre and bgm

@@ -23,7 +23,7 @@ class AudioLoader {
     // Default options
     this.options = {
       // GitHub username and repository name
-      username: 'gongjunmin',
+      username: 'ace-step',
       repo: 'ace-step.github.io',
       // GitHub release tag (if using releases)
       releaseTag: 'latest',
@@ -170,11 +170,11 @@ class AudioLoader {
    */
   getJsDelivrUrl(directory, fileName, format) {
     if (format === 'opus') {
-      return `https://cdn.jsdelivr.net/gh/${this.options.username}/${this.options.repo}@${this.options.releaseTag}/opus/samples/${directory}/${fileName}.opus`;
+      return `https://cdn.jsdelivr.net/gh/${this.options.username}/${this.options.repo}/opus/samples/${directory}/${fileName}.opus`;
     } else if (format === 'mp3') {
-      return `https://cdn.jsdelivr.net/gh/${this.options.username}/${this.options.repo}@${this.options.releaseTag}/mp3/samples/${directory}/${fileName}.mp3`;
+      return `https://cdn.jsdelivr.net/gh/${this.options.username}/${this.options.repo}/mp3/samples/${directory}/${fileName}.mp3`;
     } else {
-      return `https://cdn.jsdelivr.net/gh/${this.options.username}/${this.options.repo}@${this.options.releaseTag}/flac/samples/${directory}/${fileName}.flac`;
+      return `https://cdn.jsdelivr.net/gh/${this.options.username}/${this.options.repo}/flac/samples/${directory}/${fileName}.flac`;
     }
   }
 
