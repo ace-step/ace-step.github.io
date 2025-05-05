@@ -8,7 +8,6 @@ Modular Sequences, Atmospheric Pads, Industrial FX]
 [TEMPO: 128 BPM]
 [PRODUCTION: Raw Energy, Dynamic Acid Sequences, Smooth Transitions, 
 Layered Percussion, Impactful Drops]
-[INFLUENCES: Boys Noize, Nina Kraviz, DJ Pierre, Tiga, Daft Punk]
 </HEADER>
 <SONG_MODULES>
 <INTRO>
