@@ -183,35 +183,48 @@
       overflow: hidden;
       text-overflow: ellipsis;
     }
-    
+
     /* Add scrolling animation for long text */
     .player-track-title.scrolling,
     .player-track-genre.scrolling {
       text-overflow: clip;
       position: relative;
       display: inline-block;
-      padding-right: 10px; /* Add some space at the end */
+      padding-right: 10px;
+      /* Add some space at the end */
       animation: marquee 10s linear infinite;
-      animation-delay: 1s; /* Delay before starting */
+      animation-delay: 1s;
+      /* Delay before starting */
     }
-    
+
     /* Animation for scrolling text */
     @keyframes marquee {
-      0%, 15% { transform: translateX(0); } /* Pause at the beginning */
-      85%, 100% { transform: translateX(calc(-100% + 180px)); } /* Stop when text is at the end of container */
+
+      0%,
+      15% {
+        transform: translateX(0);
+      }
+
+      /* Pause at the beginning */
+      85%,
+      100% {
+        transform: translateX(calc(-100% + 180px));
+      }
+
+      /* Stop when text is at the end of container */
     }
-    
+
     /* Different animation speeds based on content length */
     .player-track-title.scrolling.length-medium,
     .player-track-genre.scrolling.length-medium {
       animation-duration: 15s;
     }
-    
+
     .player-track-title.scrolling.length-long,
     .player-track-genre.scrolling.length-long {
       animation-duration: 20s;
     }
-    
+
     /* Ensure the animation stays within the container */
     .track-details {
       position: relative;
@@ -329,7 +342,7 @@
 
       // Initialize the AudioLoader
       const audioLoader = new AudioLoader({
-        username: 'gongjunmin',
+        username: 'ace-step',
         repo: 'ace-step.github.io',
         releaseTag: '',
         useJsDelivr: true,
@@ -350,7 +363,13 @@
           musicSampleSections = await response.json();
 
           // Generate the table rows
-          generateTableRows();
+
+          generateTableRows(['GeneralSongs', 'Experimental', 'Instrumentals', 'MultipleLang'], 'baseline-quality');
+          
+          generateTableRows(['Controlability-retake', 'Controlability-repaint', 'Controlability-edit'], 'controlability');
+
+          generateTableRows(['Application-Lyric2Vocal', 'Text2Sample'], 'application');
+
 
           // Initialize mode indicators
           document.querySelector('#player-shuffle-btn .mode-indicator').textContent = '';
@@ -385,14 +404,19 @@
       loadSamplesData();
 
       // Generate table rows dynamically by section
-      function generateTableRows() {
+      function generateTableRows(sectionIds, select_id) {
+      // function generateTableRows() {
         // Make sure we're using the latest flattened list
         musicSamples = Object.values(musicSampleSections).flat();
-        const tbody = document.querySelector('table tbody');
+        // const tbody = document.querySelector('table tbody');
+        const tbody = document.querySelector(`tbody#${select_id}`);
         tbody.innerHTML = ''; // Clear existing content
 
         // Process each section
         Object.entries(musicSampleSections).forEach(([sectionId, samples]) => {
+          if (!sectionIds.includes(sectionId)) {
+             return;
+          }
           // Create section header row
           const sectionRow = document.createElement('tr');
           const sectionCell = document.createElement('td');
@@ -409,14 +433,14 @@
 
           // Set section title based on ID
           let sectionTitle = sectionId;
-          if (sectionId === 'DiverseStyles') {
-            sectionTitle = 'Diverse Styles';
+          if (sectionId === 'GeneralSongs') {
+            sectionTitle = 'General Songs';
           } else if (sectionId === 'MultipleLang') {
             sectionTitle = 'Multiple Languages';
-          } else if (sectionId === 'InstrumentalStyles') {
-            sectionTitle = 'Instrumental';
-          } else if (sectionId === 'VocalTechniques') {
-            sectionTitle = 'Vocal Techniques';
+          } else if (sectionId === 'Instrumentals') {
+            sectionTitle = 'Instrumentals';
+          } else if (sectionId === 'Experimental') {
+            sectionTitle = 'Experimental Inputs';
           } else if (sectionId === 'Controlability-retake') {
             sectionTitle = 'Variations Generation';
           } else if (sectionId === 'Controlability-repaint') {
@@ -465,16 +489,14 @@
           noteDiv.appendChild(noteTitle);
 
           // Add specific notes based on section ID
-          if (sectionId === 'DiverseStyles') {
+          if (sectionId === 'GeneralSongs') {
             addNoteItem(noteDiv, 'Supports all mainstream music styles with various description formats including short tags, descriptive text, or use-case scenarios.');
-          } else if (sectionId === 'InstrumentalStyles') {
+          } else if (sectionId === 'Experimental') {
+            addNoteItem(noteDiv, 'Experimentally testing various inputs to assess its usability.');
+          } else if (sectionId === 'Instrumentals') {
             addNoteItem(noteDiv, 'Supports various instrumental music generation across different genres and styles.');
             addNoteItem(noteDiv, 'Capable of producing realistic instrumental tracks with appropriate timbre and expression for each instrument.');
             addNoteItem(noteDiv, 'Can generate complex arrangements with multiple instruments while maintaining musical coherence.');
-          } else if (sectionId === 'VocalTechniques') {
-            addNoteItem(noteDiv, 'Capable of rendering various vocal styles and techniques with good quality.');
-            addNoteItem(noteDiv, 'While audio quality may have some limitations, the system shows promising potential in vocal synthesis.');
-            addNoteItem(noteDiv, 'Supports different vocal expressions including various singing techniques and styles.');
           } else if (sectionId === 'MultipleLang') {
             addNoteItem(noteDiv, '19 languages are supported. But due to data imbalance, less common languages may underperform. Top 10 well-performing languages are:');
             const langList = document.createElement('p');
@@ -559,7 +581,49 @@
 
             const lyricsHeader = document.createElement('div');
             lyricsHeader.className = 'lyrics-header';
+            console.log(`debugging ${sample.id} ${sample.fileName}`);
             lyricsHeader.textContent = 'Lyrics';
+            switch (sample.id) {
+              case 'dark-atmospheric':
+                lyricsHeader.textContent = 'Chinese';
+                break;
+              case 'electro-house':
+                lyricsHeader.textContent = 'Chinese';
+                break;
+              case 'folk-rnb-female':
+                lyricsHeader.textContent = 'Chinese';
+                break;
+              case 'french-pop':
+                lyricsHeader.textContent = 'French';
+                break;
+              case 'german-dance':
+                lyricsHeader.textContent = 'German';
+                break;
+              case 'hip-house':
+                lyricsHeader.textContent = 'Chinese';
+                break;
+              case 'italian-folk':
+                lyricsHeader.textContent = 'Italian';
+                break;
+              case 'jpop':
+                lyricsHeader.textContent = 'Japanese';
+                break;
+              case 'kpop':
+                lyricsHeader.textContent = 'Korean';
+                break;
+              case 'mandopop':
+                lyricsHeader.textContent = 'Chinese';
+                break;
+              case 'portuguese-pop':
+                lyricsHeader.textContent = 'Portuguese';
+                break;
+              case 'russian-folk':
+                lyricsHeader.textContent = 'Russian';
+                break;
+              case 'spanish-song':
+                lyricsHeader.textContent = 'Spanish';
+                break;
+            }
 
             const toggleIcon = document.createElement('span');
             toggleIcon.className = 'toggle-icon';
@@ -778,17 +842,17 @@
           // Update player UI
           playerTrackTitle.textContent = track.fileName.replace(/_/g, ' ');
           playerTrackGenre.textContent = track.id.replace(/-/g, ' ');
-          
+
           // Check if text is too long and apply scrolling if needed
           setTimeout(() => {
             // For track title
             playerTrackTitle.classList.remove('scrolling', 'length-medium', 'length-long');
             const titleText = playerTrackTitle.textContent;
             playerTrackTitle.setAttribute('data-content', titleText); // Set content for ::after
-            
+
             if (playerTrackTitle.scrollWidth > playerTrackTitle.clientWidth) {
               playerTrackTitle.classList.add('scrolling');
-              
+
               // Calculate ratio to determine animation speed
               const ratio = playerTrackTitle.scrollWidth / playerTrackTitle.clientWidth;
               if (ratio >= 2) {
@@ -797,15 +861,15 @@
                 playerTrackTitle.classList.add('length-medium');
               }
             }
-            
+
             // For track genre
             playerTrackGenre.classList.remove('scrolling', 'length-medium', 'length-long');
             const genreText = playerTrackGenre.textContent;
             playerTrackGenre.setAttribute('data-content', genreText); // Set content for ::after
-            
+
             if (playerTrackGenre.scrollWidth > playerTrackGenre.clientWidth) {
               playerTrackGenre.classList.add('scrolling');
-              
+
               // Calculate ratio to determine animation speed
               const ratio = playerTrackGenre.scrollWidth / playerTrackGenre.clientWidth;
               if (ratio >= 2) {
@@ -825,7 +889,7 @@
             }
             return color;
           };
-          
+
           // Create a random music-themed SVG
           const bgColor = getRandomColor();
           const fgColor = getRandomColor();
@@ -851,10 +915,10 @@
               <circle cx="100" cy="100" r="10" fill="${fgColor}"/>
             </svg>`
           ];
-          
+
           // Select a random SVG pattern
           const randomSvg = svgPatterns[Math.floor(Math.random() * svgPatterns.length)];
-          
+
           // Convert SVG to data URL
           const svgDataUrl = 'data:image/svg+xml;base64,' + btoa(randomSvg);
           playerAlbumArt.src = svgDataUrl;
@@ -1112,11 +1176,11 @@
 
   <section class="main-content">
     <h1 id="">
-      <center>🎵 ACE-Step: A Step Towards Music Generation Foundation Model 🎵</center>
+      <center> ACE-Step: A Step Towards Music Generation Foundation Model </center>
     </h1>
     <br>
 
-    <center>✨ Junmin Gong, Wenxiao Zhao, Sen Wang, Shengyuan Xu, Jing Guo ✨</center>
+    <center> Junmin Gong, Wenxiao Zhao, Sen Wang, Shengyuan Xu, Joe Guo </center>
     <br>
     <div style="display: flex; justify-content: center; align-items: center; margin-top: -10px; margin-bottom: 30px;">
       <a href="https://acestudio.ai" style="margin: 0 10px;">
@@ -1187,7 +1251,8 @@
     <h2 id="abstract" style="text-align: center;">📝 Abstract<a name="abstract"></a></h2>
 
     <p style="text-align: justify;">
-      🚀 We introduce ACE-Step, a novel open-source foundation model for music generation that overcomes key limitations of
+      🚀 We introduce ACE-Step, a novel open-source foundation model for music generation that overcomes key limitations
+      of
       existing approaches and achieves state-of-the-art performance through a holistic architectural design. Current
       methods face inherent trade-offs between generation speed, musical coherence, and controllability. For instance,
       LLM-based models (e.g., Yue, SongGen) excel at lyric alignment but suffer from slow inference and structural
@@ -1206,7 +1271,8 @@
     </p>
 
     <p style="text-align: justify;">
-      🔮 Rather than building yet another end-to-end text-to-music pipeline, our vision is to establish a foundation model
+      🔮 Rather than building yet another end-to-end text-to-music pipeline, our vision is to establish a foundation
+      model
       for music AI: a fast, general-purpose, efficient yet flexible architecture that makes it easy to train sub-tasks
       on top of it. This paves the way for developing powerful tools that seamlessly integrate into the creative
       workflows of music artists, producers, and content creators. In short, we aim to build the Stable Diffusion moment
@@ -1248,8 +1314,10 @@
       <ul>
         <li><a href="#BaselineQuality">🎯 Baseline Quality</a></li>
         <ul>
-          <li><a href="#DiverseStyles">🎭 Diverse Styles</a></li>
-          <li><a href="#MultipleLang">🌐 Multiple Languages</a></li>
+          <li><a href="#GeneralSongs">General Songs</a></li>
+          <li><a href="#Experimental">Experimental Inputs</a></li>
+          <li><a href="#Instrumentals">Instrumentals</a></li>
+          <li><a href="#MultipleLang">Multiple Languages</a></li>
         </ul>
         <li><a href="#Controlability">🎛️ Controlability</a>
           <ul>
@@ -1274,9 +1342,12 @@
     <figure>
       <img src="raw/fig/application_map.png" alt="framework" width="1000" height="600">
     </figure>
-    <h1 id="BaselineQuality" style="text-align: center;">🎯 Baseline Quality<a name="BaselineQuality"></a></h1>
 
-    <h2 id="DiverseStyles">🎭 Modeling Diverse Genres & Vocal Styles<a name="DiverseStyles"></a></h2>
+    <div class="fixed-toggle-container">
+      <button id="toggle-all-lyrics" class="toggle-all-button">📖 Collapse All Lyrics</button>
+    </div>
+    
+    <h1 id="BaselineQuality" style="text-align: center;">🎯 Baseline Quality<a name="BaselineQuality"></a></h1>
     <div style="border-left: 4px solid #097EFF; padding-left: 15px; margin-bottom: 20px;">
       <p style="font-weight: bold; margin-bottom: 5px;">📝 Note:</p>
       <p style="margin: 0;"> 🎵 Lyrics are random picked from AI music generation community or internet and not in our
@@ -1286,9 +1357,6 @@
       <p style="margin: 0;"> 💻 B.T.W., the project page is vibe coded by Roocode. 😊</p>
     </div>
 
-    <div class="fixed-toggle-container">
-      <button id="toggle-all-lyrics" class="toggle-all-button">📖 Collapse All Lyrics</button>
-    </div>
     <table>
       <!-- </colgroup> -->
       <thead>
@@ -1298,19 +1366,72 @@
           <th class="tg-0lax">ACE-Step generated</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody id="baseline-quality">
         <!-- Table rows will be dynamically generated by JavaScript -->
       </tbody>
     </table>
+
+    <h1 id="Controlability" style="text-align: center;">🎛️ Controlability<a name="Controlability"></a></h1>
+    <div style="border-left: 4px solid #097EFF; padding-left: 15px; margin-bottom: 20px;">
+      <p style="font-weight: bold; margin-bottom: 5px;">📝 Note:</p>
+      <p style="margin: 0;"> The model supports various inference-time applicaitons.</p>
+      <p style="margin: 0;"> - retake: regenerate a variation of the same song.</p>
+      <p style="margin: 0;"> - repaint: regenerate a specific part of the song.</p>
+      <p style="margin: 0;"> - edit: modify the lyrics of the song.</p>
     </div>
 
-  </section>
+    <table>
+      <!-- </colgroup> -->
+      <thead>
+        <tr>
+          <th class="tg-0lax">Prompt</th>
+          <th class="tg-0lax">Lyrics</th>
+          <th class="tg-0lax">ACE-Step generated</th>
+        </tr>
+      </thead>
+      <tbody id="controlability">
+        <!-- Table rows will be dynamically generated by JavaScript -->
+      </tbody>
+    </table>
+
+
+    <h1 id="Application" style="text-align: center;">💡 Application<a name="Application"></a></h1>
+    <div style="border-left: 4px solid #097EFF; padding-left: 15px; margin-bottom: 20px;">
+      <p style="font-weight: bold; margin-bottom: 5px;">📝 Note:</p>
+      <p style="margin: 0;"> 🎵 The model supports various fine-tuned applications </p>
+      <p style="margin: 0;"> - Lyric2Vocal: lora finetune on pure vocals</p>
+      <p style="margin: 0;"> - Text2Samples: lora finetune on musical samples & loops</p>
+      <!-- <p style="margin: 0;"> - RapMachine: lora finetune on rap data</p> -->
+      <!-- <p style="margin: 0;"> - StemGen: controlnet finetune on song tracks data </p> -->
+      <!-- <p style="margin: 0;"> - Singing2Accompaniment: controlnet finetune on vocal and accompaniment data</p> -->
+      <p style="margin: 0;"> </p>
+    </div>
+
+    <table>
+      <!-- </colgroup> -->
+      <thead>
+        <tr>
+          <th class="tg-0lax">Prompt</th>
+          <th class="tg-0lax">Lyrics</th>
+          <th class="tg-0lax">ACE-Step generated</th>
+        </tr>
+      </thead>
+      <tbody id="application">
+        <!-- Table rows will be dynamically generated by JavaScript -->
+      </tbody>
+    </table>
+
+
+  
+    </div>
 
   <!-- Global Player -->
   <div id="global-player">
     <div class="player-track-info">
       <div class="album-art">
-        <img id="player-album-art" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII=" alt="Album Art"
+        <img id="player-album-art"
+          src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNk+A8AAQUBAScY42YAAAAASUVORK5CYII="
+          alt="Album Art"
           style="width: 50px; height: 50px; border-radius: 4px; margin-right: 10px; background-color: #000000;">
       </div>
       <div class="track-details">
@@ -1320,11 +1441,38 @@
     </div>
 
     <div class="player-controls">
-      <button id="player-prev-btn" class="player-btn" title="Previous Track"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 fill-primary"><g><path d="M8 17V7a.97.97 0 0 0-.287-.713A.97.97 0 0 0 7 6a.97.97 0 0 0-.713.287A.97.97 0 0 0 6 7v10q0 .424.287.712Q6.576 18 7 18q.424 0 .713-.288A.97.97 0 0 0 8 17m11-.875v-8.25q0-.45-.3-.725a1 1 0 0 0-.7-.275q-.125 0-.275.025a.6.6 0 0 0-.275.125l-6.2 4.15q-.225.15-.338.362A1 1 0 0 0 10.8 12q0 .25.112.463a1 1 0 0 0 .338.362l6.2 4.15a.6.6 0 0 0 .275.125q.15.025.275.025.4 0 .7-.275t.3-.725"></path></g></svg></button>
-      <button id="player-play-btn" class="player-btn player-play-btn" title="Play/Pause"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 fill-primary"><path d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18a1 1 0 0 0 0-1.69L9.54 5.98A.998.998 0 0 0 8 6.82z"></path></svg></button>
-      <button id="player-next-btn" class="player-btn" title="Next Track"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 fill-primary"><g><path d="M16.5 17V7q0-.424.288-.713A.97.97 0 0 1 17.5 6q.424 0 .712.287.288.288.288.713v10q0 .424-.288.712A.97.97 0 0 1 17.5 18a.97.97 0 0 1-.712-.288A.97.97 0 0 1 16.5 17m-11-.875v-8.25q0-.45.3-.725t.7-.275q.125 0 .275.025a.6.6 0 0 1 .275.125l6.2 4.15q.225.15.338.362A1 1 0 0 1 13.7 12q0 .25-.112.463a1 1 0 0 1-.338.362l-6.2 4.15a.6.6 0 0 1-.275.125 2 2 0 0 1-.275.025q-.4 0-.7-.275t-.3-.725"></path></g></svg></button>
-      <button id="player-shuffle-btn" class="player-btn" title="Shuffle"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 fill-primary"><path d="M10.59 9.17L5.41 4 4 5.41l5.17 5.17 1.42-1.41zM14.5 4l2.04 2.04L4 18.59 5.41 20 17.96 7.46 20 9.5V4h-5.5zm.33 9.41l-1.41 1.41 3.13 3.13L14.5 20H20v-5.5l-2.04 2.04-3.13-3.13z"></path></svg> <span class="mode-indicator"></span></button>
-      <button id="player-repeat-btn" class="player-btn" title="Repeat"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 fill-primary"><path d="M7 7h10v3l4-4-4-4v3H5v6h2V7zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2v4z"></path></svg> <span class="mode-indicator"></span></button>
+      <button id="player-prev-btn" class="player-btn" title="Previous Track"><svg xmlns="http://www.w3.org/2000/svg"
+          width="2em" height="2em" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 fill-primary">
+          <g>
+            <path
+              d="M8 17V7a.97.97 0 0 0-.287-.713A.97.97 0 0 0 7 6a.97.97 0 0 0-.713.287A.97.97 0 0 0 6 7v10q0 .424.287.712Q6.576 18 7 18q.424 0 .713-.288A.97.97 0 0 0 8 17m11-.875v-8.25q0-.45-.3-.725a1 1 0 0 0-.7-.275q-.125 0-.275.025a.6.6 0 0 0-.275.125l-6.2 4.15q-.225.15-.338.362A1 1 0 0 0 10.8 12q0 .25.112.463a1 1 0 0 0 .338.362l6.2 4.15a.6.6 0 0 0 .275.125q.15.025.275.025.4 0 .7-.275t.3-.725">
+            </path>
+          </g>
+        </svg></button>
+      <button id="player-play-btn" class="player-btn player-play-btn" title="Play/Pause"><svg
+          xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24" fill="currentColor"
+          class="w-6 h-6 fill-primary">
+          <path d="M8 6.82v10.36c0 .79.87 1.27 1.54.84l8.14-5.18a1 1 0 0 0 0-1.69L9.54 5.98A.998.998 0 0 0 8 6.82z">
+          </path>
+        </svg></button>
+      <button id="player-next-btn" class="player-btn" title="Next Track"><svg xmlns="http://www.w3.org/2000/svg"
+          width="2em" height="2em" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 fill-primary">
+          <g>
+            <path
+              d="M16.5 17V7q0-.424.288-.713A.97.97 0 0 1 17.5 6q.424 0 .712.287.288.288.288.713v10q0 .424-.288.712A.97.97 0 0 1 17.5 18a.97.97 0 0 1-.712-.288A.97.97 0 0 1 16.5 17m-11-.875v-8.25q0-.45.3-.725t.7-.275q.125 0 .275.025a.6.6 0 0 1 .275.125l6.2 4.15q.225.15.338.362A1 1 0 0 1 13.7 12q0 .25-.112.463a1 1 0 0 1-.338.362l-6.2 4.15a.6.6 0 0 1-.275.125 2 2 0 0 1-.275.025q-.4 0-.7-.275t-.3-.725">
+            </path>
+          </g>
+        </svg></button>
+      <button id="player-shuffle-btn" class="player-btn" title="Shuffle"><svg xmlns="http://www.w3.org/2000/svg"
+          width="2em" height="2em" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 fill-primary">
+          <path
+            d="M10.59 9.17L5.41 4 4 5.41l5.17 5.17 1.42-1.41zM14.5 4l2.04 2.04L4 18.59 5.41 20 17.96 7.46 20 9.5V4h-5.5zm.33 9.41l-1.41 1.41 3.13 3.13L14.5 20H20v-5.5l-2.04 2.04-3.13-3.13z">
+          </path>
+        </svg> <span class="mode-indicator"></span></button>
+      <button id="player-repeat-btn" class="player-btn" title="Repeat"><svg xmlns="http://www.w3.org/2000/svg"
+          width="2em" height="2em" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 fill-primary">
+          <path d="M7 7h10v3l4-4-4-4v3H5v6h2V7zm10 10H7v-3l-4 4 4 4v-3h12v-6h-2v4z"></path>
+        </svg> <span class="mode-indicator"></span></button>
     </div>
 
     <div class="player-progress-container">
@@ -1349,7 +1497,8 @@
         <li><strong>🔄 Continuity Artifacts:</strong> Unnatural transitions in repainting/extend operations</li>
         <li><strong>🎤 Vocal Quality:</strong> Coarse vocal synthesis lacking nuance</li>
         <li><strong>🎛️ Control Granularity:</strong> Needs finer-grained musical parameter control</li>
-      <li><strong>🌐 Multilingual Lyrics Compliance:</strong> Improved support for lyrics in multiple languages, enhancing accuracy and naturalness.</li>
+        <li><strong>🌐 Multilingual Lyrics Compliance:</strong> Improved support for lyrics in multiple languages,
+          enhancing accuracy and naturalness.</li>
       </ol>
     </div>
   </section>
