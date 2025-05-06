@@ -298,6 +298,21 @@
             "directory": "Controlability-edit"
         },
         {
+            "id": "edit-kid",
+            "fileName": "edit_kid",
+            "directory": "Controlability-edit"
+        },
+        {
+            "id": "edit-old",
+            "fileName": "edit_old",
+            "directory": "Controlability-edit"
+        },
+        {
+            "id": "edit-spotify",
+            "fileName": "edit_spotify",
+            "directory": "Controlability-edit"
+        },
+        {
             "id": "edit-cry",
             "fileName": "edit_cry",
             "directory": "Controlability-edit"
@@ -305,11 +320,6 @@
         {
             "id": "edit-french",
             "fileName": "edit_french",
-            "directory": "Controlability-edit"
-        },
-        {
-            "id": "edit-gay",
-            "fileName": "edit_gay",
             "directory": "Controlability-edit"
         },
         {
@@ -323,28 +333,8 @@
             "directory": "Controlability-edit"
         },
         {
-            "id": "edit-kid",
-            "fileName": "edit_kid",
-            "directory": "Controlability-edit"
-        },
-        {
             "id": "edit-ko",
             "fileName": "edit_ko",
-            "directory": "Controlability-edit"
-        },
-        {
-            "id": "edit-man",
-            "fileName": "edit_man",
-            "directory": "Controlability-edit"
-        },
-        {
-            "id": "edit-old",
-            "fileName": "edit_old",
-            "directory": "Controlability-edit"
-        },
-        {
-            "id": "edit-spotify",
-            "fileName": "edit_spotify",
             "directory": "Controlability-edit"
         },
         {
