@@ -368,7 +368,7 @@
           
           generateTableRows(['Controlability-retake', 'Controlability-repaint', 'Controlability-edit'], 'controlability');
 
-          generateTableRows(['Application-Lyric2Vocal', 'Text2Sample'], 'application');
+          generateTableRows(['Application-Lyric2Vocal', 'Text2Sample', 'RapMachine'], 'application');
 
 
           // Initialize mode indicators
@@ -451,6 +451,8 @@
             sectionTitle = 'Lyric2Vocal (LoRA)';
           } else if (sectionId === 'Text2Sample') {
             sectionTitle = 'Text2Samples (LoRA)';
+          }  else if (sectionId === 'RapMachine') {
+            sectionTitle = 'RapMachine (LoRA)';
           }
 
           // Clear existing content
@@ -1329,10 +1331,10 @@
         <ul>
           <li><a href="#Application-Lyric2Vocal">🎤 Lyric2Vocal</a></li>
           <li><a href="#Text2Sample">📝 Text2Sample</a></li>
+          <li><a href="#RapMachine">🎧 RapMachine</a></li>
         </ul>
         <li><a href="#CommingSoon">⏳ Coming Soon</a></li>
         <ul>
-          <li><a href="#RapMachine">🎧 RapMachine</a></li>
           <li><a href="#StemGen">🎹 StemGen</a></li>
           <li><a href="#Singing2Accompaniment">🎻 Singing2Accompaniment</a></li>
         </ul>
@@ -1400,7 +1402,7 @@
       <p style="margin: 0;"> 🎵 The model supports various fine-tuned applications </p>
       <p style="margin: 0;"> - Lyric2Vocal: lora finetune on pure vocals</p>
       <p style="margin: 0;"> - Text2Samples: lora finetune on musical samples & loops</p>
-      <!-- <p style="margin: 0;"> - RapMachine: lora finetune on rap data</p> -->
+      <p style="margin: 0;"> - RapMachine: lora finetune on rap data</p>
       <!-- <p style="margin: 0;"> - StemGen: controlnet finetune on song tracks data </p> -->
       <!-- <p style="margin: 0;"> - Singing2Accompaniment: controlnet finetune on vocal and accompaniment data</p> -->
       <p style="margin: 0;"> </p>

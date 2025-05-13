@@ -451,5 +451,87 @@
             "fileName": "text2samples_violin",
             "directory": "Text2Sample"
         }
+    ],
+    "RapMachine": [
+        {
+            "id": "neural-beat",
+            "fileName": "neural_beat",
+            "directory": "RapMachine"
+        },
+        {
+            "id": "betray",
+            "fileName": "betray",
+            "directory": "RapMachine"
+        },
+        {
+            "id": "The-Boss-Is-Dead",
+            "fileName": "The_Boss_Is_Dead",
+            "directory": "RapMachine"
+        },
+        {
+            "id": "Try-Not-to-Tongue-Twist",
+            "fileName": "Try_Not_to_Tongue_Twist",
+            "directory": "RapMachine"
+        },
+        {
+            "id": "Sandy-Volleyball-Ground",
+            "fileName": "Sandy_Volleyball_Ground",
+            "directory": "RapMachine"
+        },
+        {
+            "id": "Beneath-the-Shadow",
+            "fileName": "Beneath_the_Shadow",
+            "directory": "RapMachine"
+        },
+        {
+            "id": "Rapatapa",
+            "fileName": "Rapatapa",
+            "directory": "RapMachine"
+        },
+        {
+            "id": "Betting-Bars",
+            "fileName": "Betting_Bars",
+            "directory": "RapMachine"
+        },
+        {
+            "id": "Screen-Syndrome",
+            "fileName": "Screen_Syndrome",
+            "directory": "RapMachine"
+        },
+        {
+            "id": "dingdingdangdang",
+            "fileName": "dingdingdangdang",
+            "directory": "RapMachine"
+        },
+        {
+            "id": "Consciousness-Roaming",
+            "fileName": "Consciousness_Roaming",
+            "directory": "RapMachine"
+        },
+        {
+            "id": "Neon-Compass",
+            "fileName": "Neon_Compass",
+            "directory": "RapMachine"
+        },
+        {
+            "id": "zhongguohua",
+            "fileName": "zhongguohua",
+            "directory": "RapMachine"
+        },
+        {
+            "id": "Swish-Swoosh",
+            "fileName": "Swish_Swoosh",
+            "directory": "RapMachine"
+        },
+        {
+            "id": "Gold-Chains",
+            "fileName": "Gold_Chains",
+            "directory": "RapMachine"
+        },
+        {
+            "id": "Silicon-Valley",
+            "fileName": "Silicon_Valley",
+            "directory": "RapMachine"
+        }
     ]
 }

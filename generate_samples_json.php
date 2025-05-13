@@ -15,7 +15,8 @@ $directories = [
     'Controlability-repaint',
     'Controlability-edit',
     'Application-Lyric2Vocal',
-    'Text2Sample'
+    'Text2Sample',
+    "RapMachine"
 ];
 
 // Initialize the result array
