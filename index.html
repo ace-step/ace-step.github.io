@@ -327,6 +327,55 @@
       gap: 10px;
       margin-left: 10px;
     }
+
+    /* v1.5 Notice Banner */
+    .v15-notice-banner {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      border-radius: 12px;
+      padding: 20px 30px;
+      margin: 20px auto 30px;
+      max-width: 900px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      border: 2px solid rgba(255,255,255,0.3);
+    }
+
+    .v15-banner-content {
+      text-align: center;
+      color: white;
+    }
+
+    .v15-banner-title {
+      margin: 0 0 12px 0;
+      font-size: 28px;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .v15-banner-text {
+      margin: 0 0 15px 0;
+      font-size: 18px;
+      line-height: 1.6;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    }
+
+    .v15-banner-link {
+      display: inline-block;
+      background-color: white;
+      color: #667eea;
+      padding: 12px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 18px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+      border: 2px solid white;
+    }
+
+    .v15-banner-link:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
   </style>
 </head>
 
@@ -1182,19 +1231,19 @@
     <br>
 
     <!-- New Model v1.5 Notice Banner -->
-    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; padding: 20px 30px; margin: 20px auto 30px; max-width: 900px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); border: 2px solid rgba(255,255,255,0.3);">
-      <div style="text-align: center; color: white;">
-        <h2 style="margin: 0 0 12px 0; font-size: 28px; font-weight: 700; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">
+    <div class="v15-notice-banner" role="region" aria-label="Announcement: ACE-Step v1.5 Release">
+      <div class="v15-banner-content">
+        <h2 class="v15-banner-title">
           🎵 NEW: ACE-Step v1.5 is Now Available! 🚀
         </h2>
-        <p style="margin: 0 0 15px 0; font-size: 18px; line-height: 1.6; text-shadow: 1px 1px 2px rgba(0,0,0,0.2);">
+        <p class="v15-banner-text">
           Check out our latest model with improved performance and new features!
         </p>
         <a href="https://ace-step.github.io/ace-step-v1.5.github.io/" 
-           style="display: inline-block; background-color: white; color: #667eea; padding: 12px 32px; border-radius: 8px; text-decoration: none; font-weight: 700; font-size: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); transition: all 0.3s ease; border: 2px solid white;"
-           onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.3)';"
-           onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 2px 8px rgba(0,0,0,0.2)';"
-           target="_blank" rel="noopener noreferrer">
+           class="v15-banner-link"
+           target="_blank" 
+           rel="noopener noreferrer"
+           aria-label="Visit ACE-Step v1.5 Project Page">
           ✨ Visit ACE-Step v1.5 Project Page →
         </a>
       </div>
